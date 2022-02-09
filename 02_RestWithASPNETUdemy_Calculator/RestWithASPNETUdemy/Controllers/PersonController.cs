@@ -60,10 +60,10 @@ namespace RestWithASPNETUdemy.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put([FromBody] Person person)
+        public IActionResult Put([FromBody] Person person, long id)
         {
             if (person == null) return BadRequest();
-            return Ok(_personService.Update(person));
+            return Ok(_personService.Update(person, id));
         }
 
         [HttpDelete("{id}")]
